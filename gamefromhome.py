@@ -27,8 +27,10 @@ class Robot:
     #def gain_happiness(self):
         #happiness +=2
         return #happiness
+
 #a list with two options to select from
 options_two = ["1","2"]
+yes_no = ["yes","no"]
 def title_screen_options():
     """gives options for the player to choose from, like whether or not to start or exit the game"""
     option= input("> ")
@@ -280,8 +282,44 @@ def bondingmomentducks():
         elif response =="2":
             print("You chirp back and forth like there's no tomorrow.")
             print(" +Love     +Happiness")
+
+def marketplace():
+    print("The marketplace is bustiling with vendors and customers, and the streets are filled with the smell of baked goods and fresh flowers.")
+    print("Your little robot pal seems to carry the same energy as the crowd.")
+    print("You chain your bike to a stand. The bus stop is on the other side of the market, but there's no harm in staying a little to enjoy, right?")
+    while True:
+        os.system('cls')
+        #availableoptions = look clothes stand, look toy stand, look photo booth, look food vendor, look musician, look bus stop
+        #weird options = touch clothes stand, touch toy stand, touch photo booth, touch food vendor, touch musician, touch bus stop
+        weirdoptions = ['touch clothes stand','touch toy stand']
+        nooptions = ['touch food vendor', 'touch musician']
+        print("There are several vendors nearby that look interesting. To your left there is a" + Fore.YELLOW + " clothes stand" + Fore.WHITE + " and a"+ Fore.YELLOW " toy stand.")
+        print(Fore.WHITE + "To your right, there's a" + Fore.YELLOW + " photo booth" + Fore.WHITE + " and a" + Fore.YELLOW + " food vendor." + Fore.WHITE)
+        print("You also spot a" + Fore.YELLOW + " musician" + Fore.WHITE + " performing in the corner. You can go to the" + Fore.YELLOW + " bus stop" + Fore.WHITE + when you're done.")
+        print(Fore.CYAN + "####################################" + Style.RESET_ALL)
+        response = input("What do you want to do? >  ").lower()
+        if response is in weirdoptions:
+            print("That would make you look like a thief.")
+        elif response is in nooptions:
+            print("That would be considered assault.")
+        if response == "look clothes stand":
+            print("The clothes stand has small shirts, sweaters, and socks for children. They look like they would fit your robot friend. ")
+            answer = input("Look closer at the wares? [yes/no] > ").lower()
+                if answer == "yes":
+                    marketclothes()
+
+
+
+
+def marketclothes():
+    print("You find a few options that would fit your friend.")
+    shoppingitems = {'1': {'Item':'Tiny duck shirt', 'Price': 10},
+    '2': {'Item':'Tiny panda onesie','Price': 15},
+    '3': {'Item':'"I love you a bot" hoodie','Price': 10}}
+    print(shoppingitems['1'])
+
 #def scenekitchen():
-buddydevelopment()
+marketclothes()
 title_screen()
 #def start_game():
 beforeinstructions()
