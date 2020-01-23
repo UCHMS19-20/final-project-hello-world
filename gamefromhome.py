@@ -20,10 +20,10 @@ class Robot:
         #return love
     #def gain_knowledge(self):
         #knowledge +=2
-        return #knowledge
+        #return #knowledge
     #def gain_kindness(self):
         # kindness +=2
-        return #kindness
+        #return #kindness
     #def gain_happiness(self):
         #happiness +=2
         return #happiness
@@ -241,7 +241,7 @@ def buddydevelopment():
     print("########" + Fore.WHITE + "   Protoype Vers. 1   " + Fore.BLUE + "######")
     print("####################################")
     print(Fore.WHITE + '               -Love-         ')
-    print(self.love)
+    #print(self.love)
     print(Fore.WHITE + '               -Knowledge-          ')
     print(Fore.WHITE + '               -Kindness-           ')
     print(Fore.WHITE + '               -Happiness-           ')
@@ -278,37 +278,42 @@ def bondingmomentducks():
         if response == "1":
             print("You tell the robot all that you know about ducks as you watch them waddle.")
             print(" +Love     +Happiness     +Knowledge")
-
-        elif response =="2":
+            break
+        elif response == "2":
             print("You chirp back and forth like there's no tomorrow.")
             print(" +Love     +Happiness")
+            break
+        else:
+            print("Number 1 or 2, please. > ")
 
 def marketplace():
     print("The marketplace is bustiling with vendors and customers, and the streets are filled with the smell of baked goods and fresh flowers.")
     print("Your little robot pal seems to carry the same energy as the crowd.")
     print("You chain your bike to a stand. The bus stop is on the other side of the market, but there's no harm in staying a little to enjoy, right?")
     while True:
-        os.system('cls')
         #availableoptions = look clothes stand, look toy stand, look photo booth, look food vendor, look musician, look bus stop
         #weird options = touch clothes stand, touch toy stand, touch photo booth, touch food vendor, touch musician, touch bus stop
         weirdoptions = ['touch clothes stand','touch toy stand']
         nooptions = ['touch food vendor', 'touch musician']
-        print("There are several vendors nearby that look interesting. To your left there is a" + Fore.YELLOW + " clothes stand" + Fore.WHITE + " and a"+ Fore.YELLOW " toy stand.")
+        print("There are several vendors nearby that look interesting. To your left there is a" + Fore.YELLOW + " clothes stand" + Fore.WHITE + " and a" + Fore.YELLOW + " toy stand.")
         print(Fore.WHITE + "To your right, there's a" + Fore.YELLOW + " photo booth" + Fore.WHITE + " and a" + Fore.YELLOW + " food vendor." + Fore.WHITE)
-        print("You also spot a" + Fore.YELLOW + " musician" + Fore.WHITE + " performing in the corner. You can go to the" + Fore.YELLOW + " bus stop" + Fore.WHITE + when you're done.")
+        print("You also spot a" + Fore.YELLOW + " musician" + Fore.WHITE + " performing in the corner. You can go to the" + Fore.YELLOW + " bus stop" + Fore.WHITE + "when you're done.")
         print(Fore.CYAN + "####################################" + Style.RESET_ALL)
         response = input("What do you want to do? >  ").lower()
-        if response is in weirdoptions:
+        if response in weirdoptions:
             print("That would make you look like a thief.")
-        elif response is in nooptions:
+        elif response in nooptions:
             print("That would be considered assault.")
-        if response == "look clothes stand":
+        elif response == "look clothes stand":
             print("The clothes stand has small shirts, sweaters, and socks for children. They look like they would fit your robot friend. ")
             answer = input("Look closer at the wares? [yes/no] > ").lower()
-                if answer == "yes":
-                    marketclothes()
-
-
+            if answer == "yes":
+                marketclothes()
+            if answer == "no":
+                print("You look around again for something to do")
+        elif response == "look toy stand":
+            print("The toy stand has a bunch of stuffed animals and plushies. There's only one your buddy seems to like. It's a duck plushie that quacks softly when you squeeze it. It's $5.")
+        elif response == "look photo booth":
 
 
 def marketclothes():
@@ -319,7 +324,6 @@ def marketclothes():
     print(shoppingitems['1'])
 
 #def scenekitchen():
-marketclothes()
 title_screen()
 #def start_game():
 beforeinstructions()
@@ -327,7 +331,8 @@ after_instructions()
 scenetwokitchen()
 meetbuddy()
 bikeride()
-
+bondingmomentducks()
+marketplace()
 #if skip_morning == False:
     #afterinstructions()
     #scenekitchen()
