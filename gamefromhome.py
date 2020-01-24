@@ -4,8 +4,6 @@ from colorama import Fore, Back, Style
 import os
 import random
 import code
-import playsound
-from playsound import playsound
 
 class Robot:
     """Robot status"""
@@ -105,7 +103,7 @@ def beforeinstructions():
             break
         #skip_morning = False
         elif response == "2":
-            print("Thisheckin elif caused me so many problems")
+            print("You fell asleep again.")
         else:
             print("Just type in numbers 1 or 2.")
         #skip_morning = True
@@ -335,7 +333,7 @@ def marketclothes():
 
 #def scenekitchen():
 title_screen()
-playsound('https://www.youtube.com/watch?v=FentCyS1O5k.mp3')
+#playsound('https://www.youtube.com/watch?v=FentCyS1O5k.mp3')
 #def start_game():
 beforeinstructions()
 after_instructions()
