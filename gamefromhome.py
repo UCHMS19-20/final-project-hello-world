@@ -4,6 +4,8 @@ from colorama import Fore, Back, Style
 import os
 import random
 import code
+import playsound
+from playsound import playsound
 
 class Robot:
     """Robot status"""
@@ -314,6 +316,14 @@ def marketplace():
         elif response == "look toy stand":
             print("The toy stand has a bunch of stuffed animals and plushies. There's only one your buddy seems to like. It's a duck plushie that quacks softly when you squeeze it. It's $5.")
         elif response == "look photo booth":
+            print("It looks like it's free, and you could take a picture of you and your new friend. It's not every day you can take a photo with a robot.")
+            answer == input("take a photo? [yes/no] >  ")
+            if answer == "yes":
+                print("You spend a couple minutes in the photo booth. The robot looks very pleased with the strip of film.")
+                print("+love +happiness")
+            if answer == "no":
+                print("You look around again for something to do")
+
 
 
 def marketclothes():
@@ -325,6 +335,7 @@ def marketclothes():
 
 #def scenekitchen():
 title_screen()
+playsound('https://www.youtube.com/watch?v=FentCyS1O5k.mp3')
 #def start_game():
 beforeinstructions()
 after_instructions()
